@@ -1,2 +1,0 @@
-# LitterLewisGame
-Litter Game 
