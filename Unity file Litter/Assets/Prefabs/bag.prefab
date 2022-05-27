@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 4345475919009166359}
   - component: {fileID: 4345475919009166358}
   - component: {fileID: 4345475919009166355}
-  - component: {fileID: 4345475919009166364}
   - component: {fileID: 4345475919009166365}
   - component: {fileID: 4345475919009166366}
   m_Layer: 0
@@ -154,8 +153,6 @@ MonoBehaviour:
   coyoteTimeDuration: 0.25
   timeUntilRespawn: 2
   maxHealth: 100
-  LS: {fileID: 0}
-  CRS: {fileID: 0}
   distance: 0
   whatIsLadder:
     serializedVersion: 2
@@ -181,22 +178,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4345475919009166364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4345475919009166357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e55db8d7bf721b41b80b34c9d3cac12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lives: 3
-  live1: {fileID: 4345475919009166357}
-  live2: {fileID: 4345475919009166357}
-  live3: {fileID: 4345475919009166357}
 --- !u!114 &4345475919009166365
 MonoBehaviour:
   m_ObjectHideFlags: 0
