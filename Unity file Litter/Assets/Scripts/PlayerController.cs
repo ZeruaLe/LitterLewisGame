@@ -12,8 +12,9 @@ public class PlayerController : MonoBehaviour
     private enum State {idle, run, jump, fall}
     private State state = State.idle;
     private Collider2D m_Collider;
-    [SerializeField] private LayerMask ground;
-    [SerializeField] private LayerMask ladder;
+
+    [Header("Movement Settings")]
+    [SerializeField] private LayerMask ground;    
     [SerializeField] private float speed = 5f;
     [SerializeField] private float jumpForce = 8f;
     [SerializeField] private float gravityScale = 1f;
@@ -21,23 +22,30 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float acceleration = 10f;
     [SerializeField] private float coyoteTimeDuration = 0.5f;
     [SerializeField] private float maxBrakeSpinVelocity = 300f;
+    [Range(0, .3f)][SerializeField] private float m_MovementSmoothing = .05f;
+
+    [Header("Ladder Settings")]
+    public LayerMask whatIsLadder;
+    public float distance; 
+
+    [Header("Health Settings")]
     public float maxHealth = 100f;
     private float currentHealth;
     private float score = 0f;
     private int currentKeyAmount = 0;
     private float speedModifiers = 0;
 
+    [Header("Spawning Settings")]
+    [SerializeField] private CallbackSpawner _jumpSpawner;
+
     //for ladder and rope system
-    private float inputVertical;
-    public float distance;
-    public LayerMask whatIsLadder;
+    private float inputVertical;   
     private bool isClimbing;
     private bool canJump;
 
     private float horizontalMove = 0f;
     private float verticalMove = 0f;
-    private Vector3 velocity = Vector3.zero;
-    [Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;
+    private Vector3 velocity = Vector3.zero;   
 
     private float coyoteTimeTime;
 
@@ -58,8 +66,19 @@ public class PlayerController : MonoBehaviour
         m_Collider = GetComponent<Collider2D>();   // Get the current object's Collider2D component
     }
 
+    private void OnEnable()
+    {
+        if (m_Rigidbody != null)
+        {
+            m_Rigidbody.velocity = Vector3.zero;
+            m_Rigidbody.angularVelocity = 0;
+        }
+
+        state = State.idle;
+    }
+
     // Runs once every frame
-   private void Update()
+    private void Update()
    {
        horizontalMove = Input.GetAxis("Horizontal");     // Get the player input for the X axis (left and right) - keyboard keys "A" and "D"
        verticalMove = Input.GetAxisRaw("Vertical");
@@ -109,6 +128,9 @@ public class PlayerController : MonoBehaviour
             //SoundManagerScript.PlaySound("jump");       // Play jump sound
             m_Rigidbody.velocity = new Vector2(m_Rigidbody.velocity.x, jumpForce);      // Moves the player object up at a certain jump force specified by the user
             state = State.jump;     // change the state to "Jump"
+
+            if (_jumpSpawner != null)
+                _jumpSpawner.Spawn();
         }
    }
 
