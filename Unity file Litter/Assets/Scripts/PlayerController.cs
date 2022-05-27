@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 
@@ -11,41 +12,44 @@ public class PlayerController : MonoBehaviour
     private enum State {idle, run, jump, fall}
     private State state = State.idle;
     private Collider2D m_Collider;
-    [SerializeField] private LayerMask ground;
-    [SerializeField] private LayerMask ladder;
+
+    [Header("Movement Settings")]
+    [SerializeField] private LayerMask ground;    
     [SerializeField] private float speed = 5f;
     [SerializeField] private float jumpForce = 8f;
     [SerializeField] private float gravityScale = 1f;
     [SerializeField] private float brakeStrength = 0.8f;
     [SerializeField] private float acceleration = 10f;
     [SerializeField] private float coyoteTimeDuration = 0.5f;
-    [SerializeField] private float timeUntilRespawn = 3f;
+    [SerializeField] private float maxBrakeSpinVelocity = 300f;
+    [Range(0, .3f)][SerializeField] private float m_MovementSmoothing = .05f;
+
+    [Header("Ladder Settings")]
+    public LayerMask whatIsLadder;
+    public float distance; 
+
+    [Header("Health Settings")]
     public float maxHealth = 100f;
     private float currentHealth;
     private float score = 0f;
     private int currentKeyAmount = 0;
     private float speedModifiers = 0;
 
-    //for live system
-    public LivesSystem LS;
-
-    //for checkpoint reset system
-    public CheckpointResetSystem CRS;
+    [Header("Spawning Settings")]
+    [SerializeField] private CallbackSpawner _jumpSpawner;
 
     //for ladder and rope system
-    private float inputVertical;
-    public float distance;
-    public LayerMask whatIsLadder;
+    private float inputVertical;   
     private bool isClimbing;
     private bool canJump;
 
     private float horizontalMove = 0f;
     private float verticalMove = 0f;
-    private Vector3 velocity = Vector3.zero;
-    [Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;
+    private Vector3 velocity = Vector3.zero;   
 
     private float coyoteTimeTime;
-    private Vector3 spawnPoint;
+
+    public static UnityAction OnDeath;
 
     // Runs when the character object turns on
     private void Awake()
@@ -60,15 +64,24 @@ public class PlayerController : MonoBehaviour
         m_Rigidbody = GetComponent<Rigidbody2D>();      // Get the current object's Rigidbody2D component
         m_Animator = GetComponent<Animator>();      // Get the current object's Animator component
         m_Collider = GetComponent<Collider2D>();   // Get the current object's Collider2D component
+    }
 
-        spawnPoint = transform.position;
+    private void OnEnable()
+    {
+        if (m_Rigidbody != null)
+        {
+            m_Rigidbody.velocity = Vector3.zero;
+            m_Rigidbody.angularVelocity = 0;
+        }
+
+        state = State.idle;
     }
 
     // Runs once every frame
-   private void Update()
+    private void Update()
    {
        horizontalMove = Input.GetAxis("Horizontal");     // Get the player input for the X axis (left and right) - keyboard keys "A" and "D"
-       verticalMove = Input.GetAxis("Vertical");
+       verticalMove = Input.GetAxisRaw("Vertical");
        CheckJump();
        getMovementKey(horizontalMove * Time.fixedDeltaTime);      // Calls getMovementKey() function and passes the input the user presses
        getState();      // Calls getState() function
@@ -76,6 +89,7 @@ public class PlayerController : MonoBehaviour
        ladderAndropeSystem();
     }
 
+    float curAngVel;
     // Uses the player input to move the character
     private void getMovementKey(float horizontalMove)
    {
@@ -85,6 +99,8 @@ public class PlayerController : MonoBehaviour
         if (verticalMove < 0)
         {
             m_Rigidbody.velocity = m_Rigidbody.velocity * brakeStrength;
+
+            m_Rigidbody.angularVelocity = Mathf.Clamp(m_Rigidbody.angularVelocity, -maxBrakeSpinVelocity, maxBrakeSpinVelocity);
         }
         else
         {
@@ -112,6 +128,9 @@ public class PlayerController : MonoBehaviour
             //SoundManagerScript.PlaySound("jump");       // Play jump sound
             m_Rigidbody.velocity = new Vector2(m_Rigidbody.velocity.x, jumpForce);      // Moves the player object up at a certain jump force specified by the user
             state = State.jump;     // change the state to "Jump"
+
+            if (_jumpSpawner != null)
+                _jumpSpawner.Spawn();
         }
    }
 
@@ -170,37 +189,20 @@ public class PlayerController : MonoBehaviour
        // Decreases the player's current health by the damage value, if it is less than or equal to 0, player loses
        if ((currentHealth -= damage) <= 0)
        {
-
-            if(LS != null)
-                LS.deductLive(); //Calling deductLive function from LivesSystem Script of GameManager
-
-           currentHealth = maxHealth; //Set health to full again
-
-            if(CRS != null)
-                CRS.resetPlayerAtStart(); //Calling resetPlayerAtStart function from CheckpointResetSystem Script of GameManager
-
-           transform.localScale = new Vector2(1, 1); //player face to right
-           
-            Invoke("Respawn", timeUntilRespawn);
-
             gameObject.SetActive(false);
+
+            OnDeath?.Invoke();
        }
-
-        if (LS != null && LS.lives <= 0) //if lives are 0 or less than that then
-        {
-            PlayerPrefs.SetFloat("PlayerScore", score);     // Set global scene variable to use in Win and Lose Scenes
-            SceneManager.LoadScene("loseScene");      // Change to lose screen
-
-           }
-
    }
 
-    public void Respawn()
+    public void Respawn(Vector3 respawnPoint)
     {
         state = State.idle;
         currentHealth = maxHealth;
-        transform.position = spawnPoint;
+        transform.position = respawnPoint;
         gameObject.SetActive(true);
+
+        m_Rigidbody.velocity = Vector2.zero;
     }
 
    private void ladderAndropeSystem()

@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 4345475919009166359}
   - component: {fileID: 4345475919009166358}
   - component: {fileID: 4345475919009166355}
-  - component: {fileID: 4345475919009166364}
   - component: {fileID: 4345475919009166365}
   - component: {fileID: 4345475919009166366}
+  - component: {fileID: 8171402948316094487}
   m_Layer: 0
   m_Name: bag
   m_TagString: Player
@@ -143,24 +143,20 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 256
-  ladder:
-    serializedVersion: 2
-    m_Bits: 0
   speed: 8
   jumpForce: 13
   gravityScale: 3
   brakeStrength: 0.8
   acceleration: 10
   coyoteTimeDuration: 0.25
-  timeUntilRespawn: 2
-  maxHealth: 100
-  LS: {fileID: 0}
-  CRS: {fileID: 0}
-  distance: 0
+  maxBrakeSpinVelocity: 300
+  m_MovementSmoothing: 0.05
   whatIsLadder:
     serializedVersion: 2
     m_Bits: 0
-  m_MovementSmoothing: 0.05
+  distance: 0
+  maxHealth: 100
+  _jumpSpawner: {fileID: 8171402948316094487}
 --- !u!95 &4345475919009166355
 Animator:
   serializedVersion: 4
@@ -181,22 +177,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4345475919009166364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4345475919009166357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e55db8d7bf721b41b80b34c9d3cac12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lives: 3
-  live1: {fileID: 4345475919009166357}
-  live2: {fileID: 4345475919009166357}
-  live3: {fileID: 4345475919009166357}
 --- !u!114 &4345475919009166365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,3 +209,21 @@ MonoBehaviour:
   m_ZeroHealthColour: {r: 1, g: 0, b: 0, a: 1}
   healthNumberText: {fileID: 0}
   playerScript: {fileID: 4345475919009166358}
+--- !u!114 &8171402948316094487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4345475919009166357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f34cb23b06c973469a1fdc69305e225, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectSpawnForceRange: 100
+  objectSpawnAngleRange: 30
+  objects:
+  - {fileID: 1310738370662442040, guid: 4f790b8c0449b6741996c8c238031af5, type: 3}
+  - {fileID: 7761150761491320578, guid: a0e612913f3fb234b982cc9f58f46803, type: 3}
+  - {fileID: 1716920764399139412, guid: f4f05538d6b281c489ca3a8c9c65eee9, type: 3}
