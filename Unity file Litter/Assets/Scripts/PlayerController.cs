@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 
@@ -26,12 +27,6 @@ public class PlayerController : MonoBehaviour
     private int currentKeyAmount = 0;
     private float speedModifiers = 0;
 
-    //for live system
-    public LivesSystem LS;
-
-    //for checkpoint reset system
-    public CheckpointResetSystem CRS;
-
     //for ladder and rope system
     private float inputVertical;
     public float distance;
@@ -45,7 +40,8 @@ public class PlayerController : MonoBehaviour
     [Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;
 
     private float coyoteTimeTime;
-    private Vector3 spawnPoint;
+
+    public static UnityAction OnDeath;
 
     // Runs when the character object turns on
     private void Awake()
@@ -60,8 +56,6 @@ public class PlayerController : MonoBehaviour
         m_Rigidbody = GetComponent<Rigidbody2D>();      // Get the current object's Rigidbody2D component
         m_Animator = GetComponent<Animator>();      // Get the current object's Animator component
         m_Collider = GetComponent<Collider2D>();   // Get the current object's Collider2D component
-
-        spawnPoint = transform.position;
     }
 
     // Runs once every frame
@@ -171,36 +165,40 @@ public class PlayerController : MonoBehaviour
        if ((currentHealth -= damage) <= 0)
        {
 
-            if(LS != null)
-                LS.deductLive(); //Calling deductLive function from LivesSystem Script of GameManager
+           // if(LS != null)
+           //     LS.deductLive(); //Calling deductLive function from LivesSystem Script of GameManager
 
-           currentHealth = maxHealth; //Set health to full again
+           //currentHealth = maxHealth; //Set health to full again
 
-            if(CRS != null)
-                CRS.resetPlayerAtStart(); //Calling resetPlayerAtStart function from CheckpointResetSystem Script of GameManager
+           // if(CRS != null)
+           //     CRS.resetPlayerAtStart(); //Calling resetPlayerAtStart function from CheckpointResetSystem Script of GameManager
 
-           transform.localScale = new Vector2(1, 1); //player face to right
+           //transform.localScale = new Vector2(1, 1); //player face to right
            
-            Invoke("Respawn", timeUntilRespawn);
+           // Invoke("Respawn", timeUntilRespawn);
 
             gameObject.SetActive(false);
+
+            OnDeath?.Invoke();
        }
 
-        if (LS != null && LS.lives <= 0) //if lives are 0 or less than that then
-        {
-            PlayerPrefs.SetFloat("PlayerScore", score);     // Set global scene variable to use in Win and Lose Scenes
-            SceneManager.LoadScene("loseScene");      // Change to lose screen
+        //if (LS != null && LS.lives <= 0) //if lives are 0 or less than that then
+        //{
+        //    PlayerPrefs.SetFloat("PlayerScore", score);     // Set global scene variable to use in Win and Lose Scenes
+        //    SceneManager.LoadScene("loseScene");      // Change to lose screen
 
-           }
+        //}
 
    }
 
-    public void Respawn()
+    public void Respawn(Vector3 respawnPoint)
     {
         state = State.idle;
         currentHealth = maxHealth;
-        transform.position = spawnPoint;
+        transform.position = respawnPoint;
         gameObject.SetActive(true);
+
+        m_Rigidbody.velocity = Vector2.zero;
     }
 
    private void ladderAndropeSystem()

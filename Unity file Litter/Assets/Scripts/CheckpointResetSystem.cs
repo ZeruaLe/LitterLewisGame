@@ -1,66 +1,162 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class CheckpointResetSystem : MonoBehaviour
 {
-	
-	//for checkpoint reset system
-    public GameObject startCheck;
-    public GameObject playerMain;
 
-    //for delay effect
+    #region Singleton
+
+    public static CheckpointResetSystem instance { get; private set; }
+
+    #endregion
+
+    #region Variables
+
+    [Header("Required References")]
+    public PlayerController playerMain;
     public Camera mainCam;
 
-    //for LivesSystem
-    public LivesSystem gameManagerLivesSystemScript;
+    [Header("Settings")]
+    //for checkpoint reset system
+    public Checkpoint startingCheckpoint;
+    public float respawnTime = 3f;
 
-    public GameObject lives2remain; //screen about 2 lives left
-    public GameObject life1remain; //screen about 1 life left
-    
-	public void resetPlayerAtStart()
+    private Checkpoint _curCheckpoint;
+    public static Checkpoint curCheckpoint => instance._curCheckpoint;
+
+    //for LivesSystem
+    //public LivesSystem gameManagerLivesSystemScript;
+    //public GameObject lives2remain; //screen about 2 lives left
+    //public GameObject life1remain; //screen about 1 life left
+
+    #endregion
+
+    #region Events
+
+    public static UnityAction<Checkpoint> OnNewCheckpoint; 
+
+    #endregion
+
+    #region Awake / Destroy / Start
+
+    private void Awake()
+    {
+        // Init our instance
+        if (instance == null)
+            instance = this;
+
+        if (instance == this)
+        {
+            // Awake
+            PlayerController.OnDeath += OnPlayerDeath;
+        }
+        else
+        {
+            // Destroy ourselves if we are not the correct manager
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (instance == this)
+            instance = null;
+
+        PlayerController.OnDeath -= OnPlayerDeath;
+    }
+
+    private void Start()
+    {
+        if (startingCheckpoint != null)
+        {
+            SetCheckpoint(startingCheckpoint);
+            RespawnPlayer();
+        }
+    }
+
+    #endregion
+
+    #region Event Callbacks
+
+    private void OnPlayerDeath()
+    {
+        delayEffect(RespawnPlayer);
+    }
+
+    #endregion
+
+    #region Checkpoints
+
+    public void SetCheckpoint(Checkpoint newCheckpoint)
+    {
+        // Check not current checkpoint already
+        if (newCheckpoint == curCheckpoint)
+            return;
+
+        _curCheckpoint = newCheckpoint;
+        OnNewCheckpoint?.Invoke(newCheckpoint);
+    }
+
+    #endregion
+
+    #region Respawning
+
+    [ContextMenu("Force Respawn")]
+    public void RespawnPlayer()
+    {
+        if(playerMain != null && curCheckpoint != null)
+            playerMain.Respawn(curCheckpoint.spawnPointTf != null ? curCheckpoint.spawnPointTf.position : curCheckpoint.transform.position);
+    }
+
+    #endregion
+
+    public void resetPlayerAtStart()
     {
 
         //placing player at start Checkpoint "START"
 
-        playerMain.transform.position = startCheck.transform.position; //place player again at start position (By getting the startCheck {checkpoint} position and placing the player at that position)
-        delayEffect();
+        //playerMain.transform.position = startCheck.transform.position; //place player again at start position (By getting the startCheck {checkpoint} position and placing the player at that position)
+        //delayEffect();
 
         //placing player at start Checkpoint "END"
 
     }
 
-    private void delayEffect() {
+    private void delayEffect(UnityAction onComplete) {
 
-        mainCam.cullingMask = 2; //disabling culling mask (means it will not render the other objects in the scene except for Canvas UI {delay effect} )
+        //mainCam.cullingMask = 2; //disabling culling mask (means it will not render the other objects in the scene except for Canvas UI {delay effect} )
 
-        switch (gameManagerLivesSystemScript.lives)
-        {
+        //switch (gameManagerLivesSystemScript.lives)
+        //{
 
-            case 2: //If players live count is 2
-                lives2remain.SetActive(true); //if lives count is 2 then show the screen about 2 lives left
-                break;
+        //    case 2: //If players live count is 2
+        //        lives2remain.SetActive(true); //if lives count is 2 then show the screen about 2 lives left
+        //        break;
 
-            case 1: //If players live count is 1
-                life1remain.SetActive(true); //if life count is 1 then show the screen about 1 life left
-                break;
+        //    case 1: //If players live count is 1
+        //        life1remain.SetActive(true); //if life count is 1 then show the screen about 1 life left
+        //        break;
 
-        }
+        //}
 
-        StartCoroutine(delayEffectWait()); //calling delayEffectWait method
+        StartCoroutine(delayEffectWait(onComplete)); //calling delayEffectWait method
 
     }
 
-    IEnumerator delayEffectWait()  //its a standalone method
+    IEnumerator delayEffectWait(UnityAction onComplete)  //its a standalone method
     {
 
-        yield return new WaitForSeconds(3); //Wait for 3 seconds to execute next line of code
+        yield return new WaitForSeconds(respawnTime); //Wait for 3 seconds to execute next line of code
 
-        lives2remain.SetActive(false); //after 3 seconds disable the text screen
-        life1remain.SetActive(false); //after 3 seconds disable the text screen
+        //lives2remain.SetActive(false); //after 3 seconds disable the text screen
+        //life1remain.SetActive(false); //after 3 seconds disable the text screen
 
-        mainCam.cullingMask = -1; //enabling culling mask (means it will now render all the objects in the scene again)
+        //mainCam.cullingMask = -1; //enabling culling mask (means it will now render all the objects in the scene again)
 
+        onComplete?.Invoke();
     }
 	
 }
