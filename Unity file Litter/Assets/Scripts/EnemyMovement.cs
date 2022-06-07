@@ -8,12 +8,12 @@ public class EnemyMovement : MonoBehaviour
     private bool moveRight = true;
     private float distance = 2f;
     public Transform groundDetection;
+    public LayerMask wallMask;
+    public LayerMask patrolMask;
 
     // Runs every frame
     void Update()
     {    
-        int wallMask = LayerMask.GetMask("Floor");  // Sets the variable for the "Floor" layer
-        int patrolMask = LayerMask.GetMask("Waypoint"); // Sets variable for the "Waypoint" layer
         transform.Translate(Vector2.right * speed * Time.deltaTime);    // Enemy moves forward
 
         RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, distance);  // Sets variable to see if there is a floor to walk across below the groundDetection
