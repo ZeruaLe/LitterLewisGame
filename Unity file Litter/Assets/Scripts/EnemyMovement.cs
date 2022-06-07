@@ -20,7 +20,7 @@ public class EnemyMovement : MonoBehaviour
         //int patrolMask = LayerMask.GetMask("Waypoint"); // Sets variable for the "Waypoint" layer
         transform.Translate(Vector2.right * speed * Time.deltaTime);    // Enemy moves forward
 
-        bool isGrounded = false;
+        bool isGrounded = true;
         if(!isFlying)
             isGrounded = Physics2D.Raycast(groundDetection.position, Vector2.down, distance, groundMask);  // Sets variable to see if there is a floor to walk across below the groundDetection
         RaycastHit2D wallInfo = Physics2D.Raycast(groundDetection.position, Vector2.zero, wallMask);    // Sets variable to see if there is a wall inside groundDetection
