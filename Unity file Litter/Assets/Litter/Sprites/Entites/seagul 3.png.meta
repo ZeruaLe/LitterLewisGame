@@ -1,0 +1,939 @@
+fileFormatVersion: 2
+guid: ca784dcb1c7c1894d999c5e8576b84c7
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1500
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: seagul 3_0
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 7322
+        width: 1296
+        height: 772
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09da4843d78c9f14081cb37452d90290
+      internalID: -652011504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seagul 3_1
+      rect:
+        serializedVersion: 2
+        x: 1482
+        y: 7322
+        width: 1304
+        height: 772
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abe3d3c2a7b1bdb4ea8e00e0b5e7d0de
+      internalID: 19595861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seagul 3_2
+      rect:
+        serializedVersion: 2
+        x: 2878
+        y: 7322
+        width: 1308
+        height: 772
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53525fce97d1da740aae22eed31a8cb9
+      internalID: -6893995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seagul 3_3
+      rect:
+        serializedVersion: 2
+        x: 4282
+        y: 7322
+        width: 1312
+        height: 772
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cb46d4ab9e38164abbab01c05f587f9
+      internalID: -1130057551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seagul 3_4
+      rect:
+        serializedVersion: 2
+        x: 5694
+        y: 7322
+        width: 1312
+        height: 772
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1bc12f10fae8f94a81dd45bf14e30d3
+      internalID: 1958758395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seagul 3_10
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 6426
+        width: 1312
+        height: 768
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec68d67b3927d0342b80e406af318293
+      internalID: -743589363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seagul 3_11
+      rect:
+        serializedVersion: 2
+        x: 1510
+        y: 6426
+        width: 1304
+        height: 772
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b47cbf266c64d6245b50d13b4bb2c12a
+      internalID: -383127948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seagul 3_12
+      rect:
+        serializedVersion: 2
+        x: 2914
+        y: 6426
+        width: 1296
+        height: 772
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6856dcd31070c4148bda973d54a4bb16
+      internalID: -1618295622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seagul 3_13
+      rect:
+        serializedVersion: 2
+        x: 4314
+        y: 6426
+        width: 1280
+        height: 772
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 411d6bd7e16056946aab73f5b22fdef1
+      internalID: -2082576305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seagul 3_14
+      rect:
+        serializedVersion: 2
+        x: 5698
+        y: 6426
+        width: 1272
+        height: 772
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f2eeaae3b69a0447889bd8d25027c4d
+      internalID: 1849778350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seagul 3_20
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 5526
+        width: 1268
+        height: 772
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 602dac02cc0b90c4aac643947e32ceba
+      internalID: -2055039593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seagul 3_21
+      rect:
+        serializedVersion: 2
+        x: 1466
+        y: 5526
+        width: 1260
+        height: 772
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7517cc30568d9044994fab1797c3645e
+      internalID: 1361554970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seagul 3_22
+      rect:
+        serializedVersion: 2
+        x: 2826
+        y: 5526
+        width: 1268
+        height: 772
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa597e7d76f4ca64486484766e209489
+      internalID: 1585158951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seagul 3_23
+      rect:
+        serializedVersion: 2
+        x: 4194
+        y: 5526
+        width: 1276
+        height: 772
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ef9f918e3d9dcc43aa89801a21d8ca1
+      internalID: -1331430154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seagul 3_24
+      rect:
+        serializedVersion: 2
+        x: 5566
+        y: 5526
+        width: 1288
+        height: 772
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d43092fcc76ba540a25152df0e0e034
+      internalID: -1867586265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seagul 3_30
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 4606
+        width: 1292
+        height: 772
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fe26840ae8152f439d3325c7c84441f
+      internalID: -903467994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seagul 3_31
+      rect:
+        serializedVersion: 2
+        x: 1494
+        y: 4606
+        width: 1296
+        height: 772
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0128415f1b08cd74ab74b2d956fb847b
+      internalID: -932595954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seagul 3_32
+      rect:
+        serializedVersion: 2
+        x: 2894
+        y: 4606
+        width: 1308
+        height: 772
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac821730a958c654a9f7715f05f2cfaa
+      internalID: -1669259350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seagul 3_33
+      rect:
+        serializedVersion: 2
+        x: 4306
+        y: 4606
+        width: 1324
+        height: 772
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f16b8b905fa45de4a8920919a6031a67
+      internalID: 835691710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seagul 3_34
+      rect:
+        serializedVersion: 2
+        x: 5734
+        y: 4606
+        width: 1332
+        height: 772
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9c5141b680f2ef40af484325c8da652
+      internalID: -1639036847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seagul 3_40
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 3706
+        width: 1344
+        height: 772
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a52c3eedb9d34e4bbf8b7c107db4234
+      internalID: -797293142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seagul 3_41
+      rect:
+        serializedVersion: 2
+        x: 1546
+        y: 3706
+        width: 1352
+        height: 772
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72cae8181c26cd74e86d18356ec0fd95
+      internalID: -1978378710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seagul 3_42
+      rect:
+        serializedVersion: 2
+        x: 2998
+        y: 3706
+        width: 1364
+        height: 772
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a9c9e3cdd20ab34398398946efae69b
+      internalID: 1793050393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seagul 3_43
+      rect:
+        serializedVersion: 2
+        x: 4462
+        y: 3706
+        width: 1360
+        height: 772
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ae3f2a0be357124399a351d21df20bd
+      internalID: 1988671254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seagul 3_44
+      rect:
+        serializedVersion: 2
+        x: 5922
+        y: 3706
+        width: 1356
+        height: 772
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff3f8a9f088f52b46890afbad94e9fd5
+      internalID: 1119649792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seagul 3_50
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 2806
+        width: 1352
+        height: 772
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffb7502898e41ed41b41f676247ba8af
+      internalID: 426671333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seagul 3_51
+      rect:
+        serializedVersion: 2
+        x: 1550
+        y: 2806
+        width: 1348
+        height: 772
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ff7e782da2be9c479dceff0b8cf1803
+      internalID: -326821219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seagul 3_52
+      rect:
+        serializedVersion: 2
+        x: 2994
+        y: 2806
+        width: 1344
+        height: 772
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd78b4e261e6985439107db5d0790677
+      internalID: 1156770877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seagul 3_53
+      rect:
+        serializedVersion: 2
+        x: 4434
+        y: 2810
+        width: 1340
+        height: 768
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9fda7c2c761dfd4295fe6efadb4125c
+      internalID: 1848008587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seagul 3_54
+      rect:
+        serializedVersion: 2
+        x: 5870
+        y: 2810
+        width: 1328
+        height: 768
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89fd8ff6072672449b9c02b184b3c351
+      internalID: -682019691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seagul 3_60
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 1910
+        width: 1324
+        height: 772
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1d1e1ac11f5bee48998a7c90d9050a1
+      internalID: 1722435526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seagul 3_61
+      rect:
+        serializedVersion: 2
+        x: 1515
+        y: 1910
+        width: 1319
+        height: 772
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc2dd8547e81af2458d724b92290a0c1
+      internalID: 1061252235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seagul 3_62
+      rect:
+        serializedVersion: 2
+        x: 2926
+        y: 1910
+        width: 1312
+        height: 768
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d65e46bd6ba03c0448092075e8e411f9
+      internalID: 1770421573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seagul 3_63
+      rect:
+        serializedVersion: 2
+        x: 4330
+        y: 1910
+        width: 1300
+        height: 768
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 069aeaaaf5e31b14abe92f654a387dbc
+      internalID: -1319420207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seagul 3_64
+      rect:
+        serializedVersion: 2
+        x: 5722
+        y: 1910
+        width: 1296
+        height: 768
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8a6bb82858015e40b20651caf4064b9
+      internalID: -1510015131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      seagul 3_18: 1470483139
+      seagul 3_17: 1136791135
+      seagul 3_3: -1130057551
+      seagul 3_23: -1331430154
+      seagul 3_12: -1618295622
+      seagul 3_48: -514765906
+      seagul 3_36: 959856708
+      seagul 3_40: -797293142
+      seagul 3_49: -1568053594
+      seagul 3_4: 1958758395
+      seagul 3_22: 1585158951
+      seagul 3_2: -6893995
+      seagul 3_13: -2082576305
+      seagul 3_29: -858891623
+      seagul 3_56: -1438879992
+      seagul 3_27: -1100250974
+      seagul 3_6: 185356015
+      seagul 3_20: -2055039593
+      seagul 3_50: 426671333
+      seagul 3_9: -124397040
+      seagul 3_57: 146774859
+      seagul 3_52: 1156770877
+      seagul 3_10: -743589363
+      seagul 3_44: 1119649792
+      seagul 3_37: 472231932
+      seagul 3_62: 1770421573
+      seagul 3_5: -1914400854
+      seagul 3_11: -383127948
+      seagul 3_24: -1867586265
+      seagul 3_30: -903467994
+      seagul 3_32: -1669259350
+      seagul 3_55: -187664432
+      seagul 3_60: 1722435526
+      seagul 3_19: -199811242
+      seagul 3_42: 1793050393
+      seagul 3_69: 161610716
+      seagul 3_61: 1061252235
+      seagul 3_21: 1361554970
+      seagul 3_59: -1877997890
+      seagul 3_1: 19595861
+      seagul 3_14: 1849778350
+      seagul 3_35: 50020900
+      seagul 3_43: 1988671254
+      seagul 3_51: -326821219
+      seagul 3_31: -932595954
+      seagul 3_34: -1639036847
+      seagul 3_38: -2138646305
+      seagul 3_28: 930237836
+      seagul 3_39: 1533455447
+      seagul 3_41: -1978378710
+      seagul 3_64: -1510015131
+      seagul 3_66: -545829927
+      seagul 3_16: -378588576
+      seagul 3_26: 4806935
+      seagul 3_45: -1030696617
+      seagul 3_8: 435972089
+      seagul 3_68: 464013835
+      seagul 3_0: -652011504
+      seagul 3_47: -355518786
+      seagul 3_33: 835691710
+      seagul 3_25: -966195295
+      seagul 3_7: -911992547
+      seagul 3_53: 1848008587
+      seagul 3_63: -1319420207
+      seagul 3_58: 1967781222
+      seagul 3_15: -2142991227
+      seagul 3_54: -682019691
+      seagul 3_67: 776302331
+      seagul 3_65: -1881969
+      seagul 3_46: -1557314634
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

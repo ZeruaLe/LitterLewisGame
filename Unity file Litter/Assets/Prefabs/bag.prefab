@@ -15,9 +15,8 @@ GameObject:
   - component: {fileID: 4345475919009166358}
   - component: {fileID: 4345475919009166355}
   - component: {fileID: 4345475919009166365}
-  - component: {fileID: 4345475919009166366}
   - component: {fileID: 8171402948316094487}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bag
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -79,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: dca8801dd424efb4f919f6995be43ded, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -191,24 +190,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToSpawn: {fileID: 1928023945976037885, guid: b9177a17c4a30494a9759e90f3bf9a4d, type: 3}
   spawnPoint: {fileID: 0}
---- !u!114 &4345475919009166366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4345475919009166357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0be144cdcc590b4ba2f61c3c6982447, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Slider: {fileID: 0}
-  m_FillImage: {fileID: 0}
-  m_FullHealthColour: {r: 0, g: 1, b: 0, a: 1}
-  m_ZeroHealthColour: {r: 1, g: 0, b: 0, a: 1}
-  healthNumberText: {fileID: 0}
-  playerScript: {fileID: 4345475919009166358}
 --- !u!114 &8171402948316094487
 MonoBehaviour:
   m_ObjectHideFlags: 0
