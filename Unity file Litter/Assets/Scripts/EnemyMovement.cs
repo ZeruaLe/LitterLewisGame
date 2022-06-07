@@ -23,8 +23,8 @@ public class EnemyMovement : MonoBehaviour
         bool isGrounded = true;
         if(!isFlying)
             isGrounded = Physics2D.Raycast(groundDetection.position, Vector2.down, distance, groundMask);  // Sets variable to see if there is a floor to walk across below the groundDetection
-        RaycastHit2D wallInfo = Physics2D.Raycast(groundDetection.position, Vector2.zero, wallMask);    // Sets variable to see if there is a wall inside groundDetection
-        RaycastHit2D patrolInfo = Physics2D.Raycast(groundDetection.position, Vector2.zero, patrolMask);    // Sets variable to see if theres a waypoint inside groundDetection
+        RaycastHit2D wallInfo = Physics2D.Raycast(groundDetection.position, Vector2.zero, distance, wallMask);    // Sets variable to see if there is a wall inside groundDetection
+        RaycastHit2D patrolInfo = Physics2D.Raycast(groundDetection.position, Vector2.zero, distance, patrolMask);    // Sets variable to see if theres a waypoint inside groundDetection
 
         // Runs if there is a Waypoint OR a Wall OR there is no Ground to walk across
         if (patrolInfo == true || wallInfo == true || isGrounded == false)
