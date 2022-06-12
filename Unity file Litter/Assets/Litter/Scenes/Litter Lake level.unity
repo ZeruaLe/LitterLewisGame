@@ -2746,7 +2746,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d4d234e21c97b546aadbee042133f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 0}
   parallaxEffectMultiplier: {x: 0.7, y: 0}
 --- !u!1 &622396422
 GameObject:
@@ -2905,6 +2904,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 752915601}
     m_Modifications:
+    - target: {fileID: 6499769953532206257, guid: 65ffc1a2e7c316c4092530eb0a0215a1, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7955038147993506211, guid: 65ffc1a2e7c316c4092530eb0a0215a1, type: 3}
       propertyPath: m_Name
       value: speedzone 1 (4)
@@ -6746,7 +6749,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d4d234e21c97b546aadbee042133f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 0}
   parallaxEffectMultiplier: {x: -0.5, y: 0}
 --- !u!4 &1524470151 stripped
 Transform:
@@ -6847,6 +6849,63 @@ Transform:
   m_Father: {fileID: 1744347653}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1571419885
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1703161874383754437, guid: 4725c10464f516742b84d85bd125e49b, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703161874383754437, guid: 4725c10464f516742b84d85bd125e49b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.830521
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703161874383754437, guid: 4725c10464f516742b84d85bd125e49b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.5407853
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703161874383754437, guid: 4725c10464f516742b84d85bd125e49b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703161874383754437, guid: 4725c10464f516742b84d85bd125e49b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703161874383754437, guid: 4725c10464f516742b84d85bd125e49b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703161874383754437, guid: 4725c10464f516742b84d85bd125e49b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703161874383754437, guid: 4725c10464f516742b84d85bd125e49b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703161874383754437, guid: 4725c10464f516742b84d85bd125e49b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703161874383754437, guid: 4725c10464f516742b84d85bd125e49b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703161874383754437, guid: 4725c10464f516742b84d85bd125e49b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703161874383754439, guid: 4725c10464f516742b84d85bd125e49b, type: 3}
+      propertyPath: m_Name
+      value: collectible
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4725c10464f516742b84d85bd125e49b, type: 3}
 --- !u!1001 &1605550233
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9161,7 +9220,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d4d234e21c97b546aadbee042133f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 0}
   parallaxEffectMultiplier: {x: 1, y: 1}
 --- !u!4 &2073052940 stripped
 Transform:
@@ -9435,7 +9493,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d4d234e21c97b546aadbee042133f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 0}
   parallaxEffectMultiplier: {x: 0.8, y: 0}
 --- !u!212 &2104019827
 SpriteRenderer:
