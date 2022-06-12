@@ -27,11 +27,6 @@ public class CheckpointResetSystem : MonoBehaviour
     private Checkpoint _curCheckpoint;
     public static Checkpoint curCheckpoint => instance._curCheckpoint;
 
-    //for LivesSystem
-    //public LivesSystem gameManagerLivesSystemScript;
-    //public GameObject lives2remain; //screen about 2 lives left
-    //public GameObject life1remain; //screen about 1 life left
-
     #endregion
 
     #region Events
@@ -50,6 +45,7 @@ public class CheckpointResetSystem : MonoBehaviour
 
         if (instance == this)
         {
+            DontDestroyOnLoad(gameObject);
             // Awake
             PlayerController.OnDeath += OnPlayerDeath;
         }

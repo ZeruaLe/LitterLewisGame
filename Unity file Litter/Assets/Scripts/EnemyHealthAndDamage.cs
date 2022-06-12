@@ -20,7 +20,7 @@ public class EnemyHealthAndDamage : MonoBehaviour
             if (collision.tag == "Player")
             {
                 StartCoroutine(dealDamage()); // Runs specialised function - the script pauses until the function finishes
-                checkPlayerDead(); // Class checkPlayerDead(); function
+                //checkPlayerDead(); // Class checkPlayerDead(); function
             }
        }
     }

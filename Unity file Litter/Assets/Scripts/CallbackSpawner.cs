@@ -15,7 +15,7 @@ public class CallbackSpawner : MonoBehaviour
             return;
 
         int roll = Random.Range(0, objects.Count);
-        GameObject newGO = Instantiate(objects[roll], transform.position, Quaternion.identity);
+        GameObject newGO = Instantiate(objects[roll], transform.position, Quaternion.identity, transform.root);
 
         if(newGO.TryGetComponent(out Rigidbody2D rigi))
         {

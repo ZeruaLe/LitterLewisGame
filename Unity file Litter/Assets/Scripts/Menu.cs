@@ -50,7 +50,8 @@ public class Menu : MonoBehaviour
         /*Calls the function LoadScene that loads
          *  the scene named as 
          */
-        SceneManager.LoadScene(levelOneSceneName);
+        //SceneManager.LoadScene(levelOneSceneName);
+        LitterGameManager.StartGame();
     }
 
     public void quitGame()

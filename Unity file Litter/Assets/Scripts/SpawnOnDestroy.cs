@@ -12,6 +12,6 @@ public class SpawnOnDestroy : MonoBehaviour
         if (!enabled)
             return;
         if(objectToSpawn != null)
-            Instantiate(objectToSpawn, spawnPoint == null ? transform.position : spawnPoint.position, Quaternion.identity);
+            Instantiate(objectToSpawn, spawnPoint == null ? transform.position : spawnPoint.position, Quaternion.identity, transform.root);
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ParallaxControl : MonoBehaviour
 {
-
+    [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Vector2 parallaxEffectMultiplier;
     private Transform cameraTransform;
     private Vector3 lastCameraPosition;
@@ -15,9 +15,11 @@ public class ParallaxControl : MonoBehaviour
     {
         cameraTransform = Camera.main.transform;        // Get the main camera's current position
         lastCameraPosition = cameraTransform.position;      // Get the main camera's last position
-        Sprite sprite = GetComponent<SpriteRenderer>().sprite;      // Get the current object's sprites component
-        Texture2D texture = sprite.texture;     // Get the current object's texture properties
-        textureUnitSizeX = texture.width / sprite.pixelsPerUnit;    // Calculate the total texture size
+        if (spriteRenderer != null) {
+            Sprite sprite = spriteRenderer.sprite;      // Get the current object's sprites component
+            Texture2D texture = sprite.texture;     // Get the current object's texture properties
+            textureUnitSizeX = texture.width / sprite.pixelsPerUnit;    // Calculate the total texture size
+        }
     }
 
     // Update is called once per frame

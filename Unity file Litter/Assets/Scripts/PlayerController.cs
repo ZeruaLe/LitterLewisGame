@@ -7,6 +7,12 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    #region Singleton
+
+    public static CheckpointResetSystem instance { get; private set; }
+
+    #endregion
+
     private Rigidbody2D m_Rigidbody;
     private Animator m_Animator;
     private enum State {idle, run, jump, fall}
@@ -55,15 +61,16 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         currentHealth = maxHealth;      // Set the current health as the maximum health to start 
+        m_Rigidbody = GetComponent<Rigidbody2D>();      // Get the current object's Rigidbody2D component
+        m_Animator = GetComponent<Animator>();      // Get the current object's Animator component
+        m_Collider = GetComponent<Collider2D>();   // Get the current object's Collider2D component
     }
 
     // Runs when the Scene starts
     private void Start()
     {
         //SoundManagerScript.PlaySound("run");        // Play background music
-        m_Rigidbody = GetComponent<Rigidbody2D>();      // Get the current object's Rigidbody2D component
-        m_Animator = GetComponent<Animator>();      // Get the current object's Animator component
-        m_Collider = GetComponent<Collider2D>();   // Get the current object's Collider2D component
+        
     }
 
     private void OnEnable()
