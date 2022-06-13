@@ -36,6 +36,8 @@ public class LitterGameManager : MonoBehaviour
     private static LitterLevel _levelBeach;
     private static LitterLevel _curLevel;
 
+    private int _curLevelNumber;
+
     #endregion
 
     #region Awake / Enable
@@ -60,7 +62,11 @@ public class LitterGameManager : MonoBehaviour
             } else
             {
                 int index = SceneManager.GetActiveScene().buildIndex;
-                if(index != 1)
+
+                if (index != 0)
+                    _curLevelNumber = index;
+
+                if (index != 1)
                     SceneManager.LoadSceneAsync(citySceneIndex, LoadSceneMode.Additive);
                 if (index != 2)
                     SceneManager.LoadSceneAsync(lakeSceneIndex, LoadSceneMode.Additive);
@@ -119,26 +125,6 @@ public class LitterGameManager : MonoBehaviour
 
     public static void SwitchLevel(LevelID levelID)
     {
-        if (instance.isDebug)
-        {
-            switch (levelID)
-            {
-                case LevelID.city:
-                    if(SceneManager.GetActiveScene().buildIndex == instance.citySceneIndex)
-                        SwitchLevel(_levelCity);
-                    break;
-                case LevelID.lake:
-                    if (SceneManager.GetActiveScene().buildIndex == instance.lakeSceneIndex)
-                        SwitchLevel(_levelLake);
-                    break;
-                case LevelID.beach:
-                    if (SceneManager.GetActiveScene().buildIndex == instance.beachSceneIndex)
-                        SwitchLevel(_levelBeach);
-                    break;
-            }
-            return;
-        }
-
         switch (levelID)
         {
             case LevelID.city:
@@ -162,11 +148,41 @@ public class LitterGameManager : MonoBehaviour
         levelToSwitchTo.ToggleLevel(true);       
     }
 
-    public static void StartGame()
+    public void HandleGameFlow()
     {
-        instance.menuGO.SetActive(false);
-        _levelCity.ToggleLevel(true);
-        _curLevel = _levelCity;
+        _curLevelNumber++;
+
+        if (_curLevelNumber > 3)
+        {
+            Debug.Log("Ending Sequence");
+        }
+        else {
+            LevelID levelToSwitchTo = LevelID.city;
+            switch (_curLevelNumber)
+            {
+                case 1:
+                    levelToSwitchTo = LevelID.city;
+                    break;
+                case 2:
+                    levelToSwitchTo = LevelID.lake;
+                    break;
+                case 3:
+                    levelToSwitchTo = LevelID.beach;
+                    break;
+            }
+
+            // Switch to level;
+            SwitchLevel(levelToSwitchTo);
+        }
+        
+    }
+
+    public void StartGame()
+    {
+        menuGO.SetActive(false);
+
+        _curLevelNumber = 0;
+        HandleGameFlow();
     }
 
     #endregion

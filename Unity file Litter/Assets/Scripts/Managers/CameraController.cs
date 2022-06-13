@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CameraController : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class CameraController : MonoBehaviour
     #region Variables
 
     public Camera myCamera;
+    public CameraMovement playerCamera;
+    public Animation cameraPan;
 
 
     #endregion
@@ -20,5 +23,10 @@ public class CameraController : MonoBehaviour
     private void OnEnable()
     {
         instance = this;
+    }
+
+    public void DoCameraPan()
+    {
+
     }
 }

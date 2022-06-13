@@ -15,14 +15,14 @@ public class HorizontalObjectMovement : MonoBehaviour
     // When a game object's collider 2d touches with this game object's collider 2d.
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(enabled)
+        if (gameObject.activeInHierarchy && collision.gameObject.activeInHierarchy)
             collision.transform.parent = gameObject.transform; // Make the player a child of the game object.
     }
 
     // When a game object's collider 2d that touches with this game object's collider 2d stops touching it. 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if(enabled)
+        if (gameObject.activeInHierarchy && collision.gameObject.activeInHierarchy)
             collision.transform.parent = transform.root; // Make the player not a child of this game object.
     }
 

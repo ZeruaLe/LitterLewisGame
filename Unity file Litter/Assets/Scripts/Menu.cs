@@ -51,7 +51,7 @@ public class Menu : MonoBehaviour
          *  the scene named as 
          */
         //SceneManager.LoadScene(levelOneSceneName);
-        LitterGameManager.StartGame();
+        LitterGameManager.instance.StartGame();
     }
 
     public void quitGame()

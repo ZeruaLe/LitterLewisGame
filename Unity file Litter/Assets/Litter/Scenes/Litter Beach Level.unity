@@ -5311,6 +5311,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82cd13521371b8643a7d5834392ec463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myCamera: {fileID: 0}
+  playerCamera: {fileID: 0}
+  cameraPan: {fileID: 0}
 --- !u!4 &1058320640 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8015105081669133612, guid: 8a177ea054a09a443861295861de646a, type: 3}
@@ -15815,6 +15818,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f34cb23b06c973469a1fdc69305e225, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isRandomFlip: 0
   objectSpawnForceRange: 100
   objectSpawnAngleRange: 30
   objects:
@@ -17106,7 +17110,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8060465609571959855}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.38, y: -5.85, z: 0}
+  m_LocalPosition: {x: -36.08, y: 7.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

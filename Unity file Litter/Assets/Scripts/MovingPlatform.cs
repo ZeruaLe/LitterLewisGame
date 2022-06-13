@@ -14,13 +14,13 @@ public class MovingPlatform : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(enabled)
+        if(enabled && collision.gameObject.activeInHierarchy)
             collision.transform.parent = gameObject.transform;
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if(enabled)
+        if(enabled && collision.gameObject.activeInHierarchy)
             collision.transform.parent = transform.root;
     }
 

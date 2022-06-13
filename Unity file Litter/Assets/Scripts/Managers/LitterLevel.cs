@@ -41,4 +41,10 @@ public class LitterLevel : MonoBehaviour
             LitterGameManager.SwitchLevel(levelId);
         }
     }
+
+    public void FinishLevel()
+    {
+        Debug.Log("Level Finish");
+        LitterGameManager.instance.HandleGameFlow();
+    }
 }
