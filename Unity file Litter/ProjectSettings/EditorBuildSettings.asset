@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Litter/Scenes/Litter Lake level.unity
     guid: 975cb2dc66699f84099463ed01e96864
+  - enabled: 1
+    path: Assets/Litter/Scenes/Litter Beach Level.unity
+    guid: b64e1fe3b06ff784bb62b7076b8917d6
   m_configObjects: {}

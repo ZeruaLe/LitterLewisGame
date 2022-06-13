@@ -29,13 +29,14 @@ public class EnemyHealthAndDamage : MonoBehaviour
     IEnumerator dealDamage()
     {
         yield return new WaitForEndOfFrame(); // only continues when the function is finished
-        player.takeDamage(damage); // Calls PlayerController and decreases the health number but the damage specified by the player
+
+        PlayerController.instance.takeDamage(damage); // Calls PlayerController and decreases the health number but the damage specified by the player
     }  
     
     // Check whether the player is dead or not
     private void checkPlayerDead()
     {
-        float playerHealth = player.getPlayerHealth();  // Checks and sets the player's current health in a variable to use in checkPlayerDead()
+        float playerHealth = PlayerController.instance.getPlayerHealth();  // Checks and sets the player's current health in a variable to use in checkPlayerDead()
         float minHealth = 0f;   // Minumun health to indicate the player is dead is 0
 
         /* Compares the player's current health to the minimum health

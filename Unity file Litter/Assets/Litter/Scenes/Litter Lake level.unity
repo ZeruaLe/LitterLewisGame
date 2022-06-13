@@ -2746,6 +2746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d4d234e21c97b546aadbee042133f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
   parallaxEffectMultiplier: {x: 0.7, y: 0}
 --- !u!1 &622396422
 GameObject:
@@ -3544,6 +3545,7 @@ GameObject:
   - component: {fileID: 855304955}
   - component: {fileID: 855304954}
   - component: {fileID: 855304953}
+  - component: {fileID: 855304957}
   m_Layer: 0
   m_Name: Main Camera (1)
   m_TagString: MainCamera
@@ -3632,6 +3634,18 @@ Transform:
   m_Father: {fileID: 1872626772}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &855304957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855304952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82cd13521371b8643a7d5834392ec463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &858302256
 GameObject:
   m_ObjectHideFlags: 0
@@ -6749,6 +6763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d4d234e21c97b546aadbee042133f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
   parallaxEffectMultiplier: {x: -0.5, y: 0}
 --- !u!4 &1524470151 stripped
 Transform:
@@ -8306,6 +8321,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1872626772}
+  - component: {fileID: 1872626773}
   m_Layer: 0
   m_Name: LitterLake
   m_TagString: Untagged
@@ -8343,6 +8359,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1872626773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872626771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 610605cfee223534699563663d664bdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelId: 1
+  levelCamera: {fileID: 855304957}
+  startingCheckpoint: {fileID: 1744347651}
+  levelPlayer: {fileID: 429451650}
 --- !u!1 &1876797981
 GameObject:
   m_ObjectHideFlags: 0
@@ -9220,6 +9252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d4d234e21c97b546aadbee042133f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
   parallaxEffectMultiplier: {x: 1, y: 1}
 --- !u!4 &2073052940 stripped
 Transform:
@@ -9493,6 +9526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d4d234e21c97b546aadbee042133f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
   parallaxEffectMultiplier: {x: 0.8, y: 0}
 --- !u!212 &2104019827
 SpriteRenderer:

@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
 {
     #region Singleton
 
-    public static CheckpointResetSystem instance { get; private set; }
+    public static PlayerController instance { get; private set; }
 
     #endregion
 
@@ -75,6 +75,8 @@ public class PlayerController : MonoBehaviour
 
     private void OnEnable()
     {
+        instance = this;
+
         if (m_Rigidbody != null)
         {
             m_Rigidbody.velocity = Vector3.zero;

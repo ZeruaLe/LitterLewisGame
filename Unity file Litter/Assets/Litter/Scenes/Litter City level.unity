@@ -6226,6 +6226,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610605cfee223534699563663d664bdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelId: 0
+  levelCamera: {fileID: 1046884547}
+  startingCheckpoint: {fileID: 286043354}
+  levelPlayer: {fileID: 1903450245}
 --- !u!4 &291956598
 Transform:
   m_ObjectHideFlags: 0
@@ -18620,6 +18624,10 @@ PrefabInstance:
       propertyPath: startingCheckpoint
       value: 
       objectReference: {fileID: 286043354}
+    - target: {fileID: 1776024770151660334, guid: e9f9773e3cffa8742a2814ed0faa949d, type: 3}
+      propertyPath: isDebug
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9f9773e3cffa8742a2814ed0faa949d, type: 3}
 --- !u!4 &900756041 stripped
@@ -20593,6 +20601,7 @@ GameObject:
   - component: {fileID: 1046884544}
   - component: {fileID: 1046884543}
   - component: {fileID: 1046884546}
+  - component: {fileID: 1046884547}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -20681,6 +20690,18 @@ MonoBehaviour:
   player: {fileID: 1903450249}
   xMinMax: {x: -31.92, y: 25.35}
   yMinMax: {x: -2.13, y: 4.95}
+--- !u!114 &1046884547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1046884542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82cd13521371b8643a7d5834392ec463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1047633979
 PrefabInstance:
   m_ObjectHideFlags: 0

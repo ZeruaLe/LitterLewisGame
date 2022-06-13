@@ -480,6 +480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d4d234e21c97b546aadbee042133f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
   parallaxEffectMultiplier: {x: -0.3, y: 0}
 --- !u!212 &76050583
 SpriteRenderer:
@@ -704,6 +705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d4d234e21c97b546aadbee042133f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
   parallaxEffectMultiplier: {x: 1, y: 0.2}
 --- !u!1001 &103787629
 PrefabInstance:
@@ -2719,6 +2721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d4d234e21c97b546aadbee042133f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
   parallaxEffectMultiplier: {x: -1, y: 0}
 --- !u!1 &513516505
 GameObject:
@@ -2817,6 +2820,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d4d234e21c97b546aadbee042133f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
   parallaxEffectMultiplier: {x: 0.3, y: 0.3}
 --- !u!1001 &513891550
 PrefabInstance:
@@ -3767,6 +3771,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 757503075}
+  - component: {fileID: 757503076}
   m_Layer: 0
   m_Name: LitterBeach
   m_TagString: Untagged
@@ -3812,6 +3817,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &757503076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757503074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 610605cfee223534699563663d664bdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelId: 2
+  levelCamera: {fileID: 1038347304}
+  startingCheckpoint: {fileID: 8060465609571959854}
+  levelPlayer: {fileID: 1712195022}
 --- !u!1 &773451251
 GameObject:
   m_ObjectHideFlags: 0
@@ -4009,6 +4030,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d4d234e21c97b546aadbee042133f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
   parallaxEffectMultiplier: {x: -0.3, y: 0}
 --- !u!1 &816894918
 GameObject:
@@ -5188,6 +5210,7 @@ GameObject:
   - component: {fileID: 1038347301}
   - component: {fileID: 1038347300}
   - component: {fileID: 1038347303}
+  - component: {fileID: 1038347304}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5276,6 +5299,18 @@ MonoBehaviour:
   player: {fileID: 1712195021}
   xMinMax: {x: -28.72, y: 28.51}
   yMinMax: {x: -3.24, y: 3.81}
+--- !u!114 &1038347304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038347299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82cd13521371b8643a7d5834392ec463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1058320640 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8015105081669133612, guid: 8a177ea054a09a443861295861de646a, type: 3}
@@ -5924,6 +5959,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d4d234e21c97b546aadbee042133f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
   parallaxEffectMultiplier: {x: 15, y: 15}
 --- !u!224 &1144024742
 RectTransform:
@@ -6256,6 +6292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d4d234e21c97b546aadbee042133f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
   parallaxEffectMultiplier: {x: 0.3, y: 0}
 --- !u!4 &1242969724 stripped
 Transform:
@@ -7364,6 +7401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d4d234e21c97b546aadbee042133f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
   parallaxEffectMultiplier: {x: -0.5, y: 0}
 --- !u!212 &1571565581
 SpriteRenderer:

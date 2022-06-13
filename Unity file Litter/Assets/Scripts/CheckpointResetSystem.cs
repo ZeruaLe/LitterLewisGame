@@ -15,9 +15,8 @@ public class CheckpointResetSystem : MonoBehaviour
 
     #region Variables
 
-    [Header("Required References")]
-    public PlayerController playerMain;
-    public Camera mainCam;
+    public PlayerController playerMain => PlayerController.instance;
+    public Camera mainCam => CameraController.instance.myCamera;
 
     [Header("Settings")]
     //for checkpoint reset system
@@ -45,14 +44,13 @@ public class CheckpointResetSystem : MonoBehaviour
 
         if (instance == this)
         {
-            DontDestroyOnLoad(gameObject);
             // Awake
             PlayerController.OnDeath += OnPlayerDeath;
         }
         else
         {
             // Destroy ourselves if we are not the correct manager
-            Destroy(gameObject);
+            Destroy(this);
         }
     }
 
@@ -66,11 +64,11 @@ public class CheckpointResetSystem : MonoBehaviour
 
     private void Start()
     {
-        if (startingCheckpoint != null)
-        {
-            SetCheckpoint(startingCheckpoint);
-            RespawnPlayer();
-        }
+        //if (startingCheckpoint != null)
+        //{
+        //    SetCheckpoint(startingCheckpoint);
+        //    RespawnPlayer();
+        //}
     }
 
     #endregion
