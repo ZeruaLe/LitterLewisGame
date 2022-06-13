@@ -312,6 +312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f34cb23b06c973469a1fdc69305e225, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isRandomFlip: 1
   objectSpawnForceRange: 100
   objectSpawnAngleRange: 30
   objects:

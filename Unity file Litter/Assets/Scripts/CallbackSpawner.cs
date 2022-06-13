@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class CallbackSpawner : MonoBehaviour
 {
+    public bool isRandomFlip = false;
     public float objectSpawnForceRange = 100f;
     public float objectSpawnAngleRange = 30f;
     public List<GameObject> objects = new List<GameObject>();
@@ -16,6 +17,12 @@ public class CallbackSpawner : MonoBehaviour
 
         int roll = Random.Range(0, objects.Count);
         GameObject newGO = Instantiate(objects[roll], transform.position, Quaternion.identity, transform.root);
+
+        if (isRandomFlip)
+        {
+            Vector3 scale = newGO.transform.localScale;
+            newGO.transform.localScale = new Vector3(scale.x * (Random.Range(0, 2) == 0 ? -1 : 1), scale.y, scale.z);
+        }
 
         if(newGO.TryGetComponent(out Rigidbody2D rigi))
         {
