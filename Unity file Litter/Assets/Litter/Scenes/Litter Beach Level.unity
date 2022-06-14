@@ -6339,6 +6339,10 @@ PrefabInstance:
       propertyPath: startingCheckpoint
       value: 
       objectReference: {fileID: 1834167962}
+    - target: {fileID: 1776024770151660334, guid: e9f9773e3cffa8742a2814ed0faa949d, type: 3}
+      propertyPath: isDebug
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9f9773e3cffa8742a2814ed0faa949d, type: 3}
 --- !u!4 &1258540186 stripped
