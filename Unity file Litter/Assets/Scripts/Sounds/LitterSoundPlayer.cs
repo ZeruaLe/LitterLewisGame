@@ -28,7 +28,8 @@ public class LitterSoundPlayer : MonoBehaviour
         if (playOnlyOnce && hasPlayed)
             return;
 
-        hasPlayed = true;
+        if (LitterGameManager.instance.isGameReady)
+            hasPlayed = true;
 
         SoundManagerScript.instance.Play(soundToPlay);
     }
