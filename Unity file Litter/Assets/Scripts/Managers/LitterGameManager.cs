@@ -29,12 +29,15 @@ public class LitterGameManager : MonoBehaviour
     [Header("Debug")]
     public bool isDebug = false;
 
+    public bool isGameReady => _isGameReady;
+
     private static LitterLevel _levelCity;
     private static LitterLevel _levelLake;
     private static LitterLevel _levelBeach;
     private static LitterLevel _curLevel;
 
     private int _curLevelNumber;
+    private bool _isGameReady;
 
     #endregion
 
@@ -58,6 +61,8 @@ public class LitterGameManager : MonoBehaviour
             // Awake
             transform.parent = null;
             DontDestroyOnLoad(gameObject);
+
+            _isGameReady = false;
 
             LoadLevels();
         }
@@ -192,6 +197,7 @@ public class LitterGameManager : MonoBehaviour
 
     public void StartGame()
     {
+        _isGameReady = true;
         onStartGame?.Invoke();
 
         _curLevelNumber = 0;
@@ -209,6 +215,7 @@ public class LitterGameManager : MonoBehaviour
     private IEnumerator FinishGameRoutine()
     {
         // Set end theme up.
+        SoundManagerScript.instance.Play("EndTheme");
 
         _levelBeach.levelPlayer.gameObject.SetActive(false);
         _levelBeach.levelCamera.SetupForCameraPan();
@@ -226,7 +233,7 @@ public class LitterGameManager : MonoBehaviour
         // Toggle on Lake.
         _levelBeach.gameObject.SetActive(false);
         _levelLake.EnableForPan();
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
 
         // Fade back in
         bool fadeOutComplete = false;
@@ -246,7 +253,7 @@ public class LitterGameManager : MonoBehaviour
         // Toggle on City.
         _levelLake.gameObject.SetActive(false);
         _levelCity.EnableForPan();
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
 
         // Fade back in
         fadeOutComplete = false;
@@ -258,6 +265,7 @@ public class LitterGameManager : MonoBehaviour
         _levelCity.levelCamera.DoCameraPan(() => cityPanComplete = true);
         yield return new WaitUntil(() => cityPanComplete);
 
+        _isGameReady = false;
         SceneManager.LoadScene(0, LoadSceneMode.Single);
         LoadLevels();
 
