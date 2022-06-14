@@ -4974,7 +4974,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tagMask: Player
-  chance: 1
+  chance: 0
   triggerEvent:
     m_PersistentCalls:
       m_Calls:

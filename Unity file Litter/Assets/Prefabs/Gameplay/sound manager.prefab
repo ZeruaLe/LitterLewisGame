@@ -152,11 +152,11 @@ MonoBehaviour:
     overrideClip: 0
     source: {fileID: 0}
   - name: Collectibles
-    type: 2
+    type: 0
     clip: {fileID: 8300000, guid: 219f94eb171e5094e82784458a56368f, type: 3}
     volume: 1
     pitch: 1
-    loop: 1
+    loop: 0
     overrideClip: 0
     source: {fileID: 0}
   playerAudioSource: {fileID: 6588055703967207557}
