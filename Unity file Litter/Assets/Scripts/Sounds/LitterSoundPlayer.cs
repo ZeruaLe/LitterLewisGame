@@ -5,6 +5,7 @@ using UnityEngine;
 public class LitterSoundPlayer : MonoBehaviour
 {
     public bool playOnEnable = false;
+    public bool stopOnDisable = false;
     public string soundToPlay;
 
     private void OnEnable()
@@ -13,8 +14,19 @@ public class LitterSoundPlayer : MonoBehaviour
             Play();
     }
 
+    private void OnDisable()
+    {
+        if (stopOnDisable)
+            Stop();
+    }
+
     public void Play()
     {
         SoundManagerScript.instance.Play(soundToPlay);
+    }
+
+    public void Stop()
+    {
+        SoundManagerScript.instance.Stop(soundToPlay);
     }
 }
