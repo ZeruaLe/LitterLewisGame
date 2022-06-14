@@ -31,7 +31,7 @@ public class SoundManagerScript : MonoBehaviour
         else
         {
             // Destroy ourselves if we are not the correct manager
-            Destroy(this);
+            Destroy(gameObject);
         }
 
         foreach (Sound s in sounds)// to loop through a sound to go for each sounds and call the sounds that we want
@@ -83,7 +83,7 @@ public class SoundManagerScript : MonoBehaviour
                 }
 
                 s.source.pitch = UnityEngine.Random.Range(s.pitch - pitchVariationRange, s.pitch + pitchVariationRange);
-                s.source.volume = UnityEngine.Random.Range(s.volume - volumeVariationRange, s.volume + volumeVariationRange);
+                s.source.volume = Mathf.Max(UnityEngine.Random.Range(s.volume - volumeVariationRange, s.volume + volumeVariationRange), 0.01f);
                 s.source.Play();
             }
         }
@@ -101,8 +101,9 @@ public class SoundManagerScript : MonoBehaviour
             return;
         }
 
-        if(s.source.isPlaying)
-            s.source.Stop();
+        if(s.source != null)
+            if(s.source.isPlaying)
+                s.source.Stop();
     }
 }
 
