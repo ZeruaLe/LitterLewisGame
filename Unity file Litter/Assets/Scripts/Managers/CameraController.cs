@@ -16,7 +16,11 @@ public class CameraController : MonoBehaviour
     public Camera myCamera;
     public CameraMovement playerCamera;
     public Animation cameraPan;
+    public Transform cameraPanStartPoint;
 
+    public bool isPanning => _isPanning;
+    private bool _isPanning;
+    private UnityAction _onPanComplete;
 
     #endregion
 
@@ -25,8 +29,22 @@ public class CameraController : MonoBehaviour
         instance = this;
     }
 
-    public void DoCameraPan()
+    public void SetupForCameraPan()
     {
+        playerCamera.enabled = false;
+        transform.position = cameraPanStartPoint.position;
+    }
 
+    public void DoCameraPan(UnityAction onComplete)
+    {
+        _onPanComplete = onComplete;
+        _isPanning = true;
+        cameraPan.Play();
+    }
+
+    public void OnCameraPanComplete()
+    {
+        _isPanning=false;
+        _onPanComplete?.Invoke();
     }
 }

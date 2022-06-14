@@ -10,6 +10,33 @@ public class LitterUI : MonoBehaviour
     public Animation levelTextLake;
     public Animation levelTextBeach;
 
+    [Header("Loading")]
+    public LoadingUI loadingUI;
+
+
+    #region Singleton
+    public static LitterUI instance { get; private set; }
+
+    #endregion
+
+    private void Awake()
+    {
+        // Init our instance
+        if (instance == null)
+            instance = this;
+
+        if (instance == this)
+        {
+            
+
+        }
+        else
+        {
+            // Destroy ourselves if we are not the correct manager
+            Destroy(gameObject);
+        }
+    }
+
     private void OnEnable()
     {
         LitterGameManager.onNewLevel += OnNewLevelCallback;

@@ -26,9 +26,6 @@ public class LitterGameManager : MonoBehaviour
     public int lakeSceneIndex = 2;
     public int beachSceneIndex = 3;
 
-    [Header("Menu Settings")]
-    public GameObject menuGO;
-
     [Header("Debug")]
     public bool isDebug = false;
 
@@ -44,6 +41,7 @@ public class LitterGameManager : MonoBehaviour
     #region Events
 
     public static UnityAction<LevelID> onNewLevel;
+    public static UnityAction onStartGame;
 
     #endregion
 
@@ -61,30 +59,36 @@ public class LitterGameManager : MonoBehaviour
             transform.parent = null;
             DontDestroyOnLoad(gameObject);
 
-            if (!isDebug)
-            {
-                SceneManager.LoadSceneAsync(citySceneIndex, LoadSceneMode.Additive);
-                SceneManager.LoadSceneAsync(lakeSceneIndex, LoadSceneMode.Additive);
-                SceneManager.LoadSceneAsync(beachSceneIndex, LoadSceneMode.Additive);
-            } else
-            {
-                int index = SceneManager.GetActiveScene().buildIndex;
-
-                if (index != 0)
-                    _curLevelNumber = index;
-
-                if (index != 1)
-                    SceneManager.LoadSceneAsync(citySceneIndex, LoadSceneMode.Additive);
-                if (index != 2)
-                    SceneManager.LoadSceneAsync(lakeSceneIndex, LoadSceneMode.Additive);
-                if (index != 3)
-                    SceneManager.LoadSceneAsync(beachSceneIndex, LoadSceneMode.Additive);
-            }
+            LoadLevels();
         }
         else
         {
             // Destroy ourselves if we are not the correct manager
-            Destroy(this);
+            Destroy(gameObject);
+        }
+    }
+
+    private void LoadLevels()
+    {
+        if (!isDebug)
+        {
+            SceneManager.LoadSceneAsync(citySceneIndex, LoadSceneMode.Additive);
+            SceneManager.LoadSceneAsync(lakeSceneIndex, LoadSceneMode.Additive);
+            SceneManager.LoadSceneAsync(beachSceneIndex, LoadSceneMode.Additive);
+        }
+        else
+        {
+            int index = SceneManager.GetActiveScene().buildIndex;
+
+            if (index != 0)
+                _curLevelNumber = index;
+
+            if (index != 1)
+                SceneManager.LoadSceneAsync(citySceneIndex, LoadSceneMode.Additive);
+            if (index != 2)
+                SceneManager.LoadSceneAsync(lakeSceneIndex, LoadSceneMode.Additive);
+            if (index != 3)
+                SceneManager.LoadSceneAsync(beachSceneIndex, LoadSceneMode.Additive);
         }
     }
 
@@ -188,16 +192,82 @@ public class LitterGameManager : MonoBehaviour
 
     public void StartGame()
     {
-        menuGO.SetActive(false);
+        onStartGame?.Invoke();
 
         _curLevelNumber = 0;
         HandleGameFlow();
+    }
+
+    public void FinishGame()
+    {
+        if (_curLevelNumber != 3)
+            return;
+
+        StartCoroutine(FinishGameRoutine());
+    }
+
+    private IEnumerator FinishGameRoutine()
+    {
+        // Set end theme up.
+
+        _levelBeach.levelPlayer.gameObject.SetActive(false);
+        _levelBeach.levelCamera.SetupForCameraPan();
+
+        // Do Beach Pan
+        bool beachPanComplete = false;
+        _levelBeach.levelCamera.DoCameraPan(() => beachPanComplete = true) ;
+        yield return new WaitUntil(() => beachPanComplete);
+        
+        // Fade in to transition to Lake
+        bool fadeInComplete = false;
+        LitterUI.instance.loadingUI.FadeIn(() => fadeInComplete = true);
+        yield return new WaitUntil(() => fadeInComplete);
+
+        // Toggle on Lake.
+        _levelBeach.gameObject.SetActive(false);
+        _levelLake.EnableForPan();
+        yield return new WaitForSeconds(1);
+
+        // Fade back in
+        bool fadeOutComplete = false;
+        LitterUI.instance.loadingUI.FadeOut(() => fadeOutComplete = true);
+        yield return new WaitUntil(() => fadeOutComplete);
+
+        // Do Lake Pan
+        bool lakePanComplete = false;
+        _levelLake.levelCamera.DoCameraPan(() => lakePanComplete = true);
+        yield return new WaitUntil(() => lakePanComplete);
+
+        // Fade in to transition to City
+        fadeInComplete = false;
+        LitterUI.instance.loadingUI.FadeIn(() => fadeInComplete = true);
+        yield return new WaitUntil(() => fadeInComplete);
+
+        // Toggle on City.
+        _levelLake.gameObject.SetActive(false);
+        _levelCity.EnableForPan();
+        yield return new WaitForSeconds(1);
+
+        // Fade back in
+        fadeOutComplete = false;
+        LitterUI.instance.loadingUI.FadeOut(() => fadeOutComplete = true);
+        yield return new WaitUntil(() => fadeOutComplete);
+
+        // Do City Pan
+        bool cityPanComplete = false;
+        _levelCity.levelCamera.DoCameraPan(() => cityPanComplete = true);
+        yield return new WaitUntil(() => cityPanComplete);
+
+        SceneManager.LoadScene(0, LoadSceneMode.Single);
+        LoadLevels();
+
     }
 
     #endregion
 
     public void Update()
     {
+#if UNITY_EDITOR
         if (Input.GetKey(KeyCode.U))
         {
             if (_curLevel != _levelCity)
@@ -212,5 +282,6 @@ public class LitterGameManager : MonoBehaviour
             if (_curLevel != _levelBeach)
                 SwitchLevel(LevelID.beach);
         }
+#endif
     }
 }

@@ -45,6 +45,21 @@ public class Menu : MonoBehaviour
     }
     */
 
+    private void OnEnable()
+    {
+        LitterGameManager.onStartGame += Hide;
+    }
+
+    private void OnDisable()
+    {
+        LitterGameManager.onStartGame -= Hide;
+    }
+
+    public void Hide()
+    {
+        transform.root.gameObject.SetActive(false);
+    }
+
     public void startGame()
     {
         /*Calls the function LoadScene that loads

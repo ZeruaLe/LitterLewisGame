@@ -6,7 +6,10 @@ public class LitterSoundPlayer : MonoBehaviour
 {
     public bool playOnEnable = false;
     public bool stopOnDisable = false;
+    public bool playOnlyOnce = false;
     public string soundToPlay;
+
+    private bool hasPlayed = false;
 
     private void OnEnable()
     {
@@ -22,6 +25,11 @@ public class LitterSoundPlayer : MonoBehaviour
 
     public void Play()
     {
+        if (playOnlyOnce && hasPlayed)
+            return;
+
+        hasPlayed = true;
+
         SoundManagerScript.instance.Play(soundToPlay);
     }
 

@@ -20,8 +20,11 @@ public class LitterLevel : MonoBehaviour
         // hack to set instance
         levelPlayer.gameObject.SetActive(false);
 
-        if(toggle)
+        if (toggle)
+        {
             CheckpointResetSystem.instance.SetCheckpoint(startingCheckpoint);
+            levelCamera.playerCamera.enabled = true;
+        }
         levelCamera.gameObject.SetActive(toggle);
         levelPlayer.gameObject.SetActive(toggle);
         gameObject.SetActive(toggle);
@@ -31,7 +34,11 @@ public class LitterLevel : MonoBehaviour
 
     public void EnableForPan()
     {
+        levelPlayer.gameObject.SetActive(false);
 
+        levelCamera.SetupForCameraPan();
+        levelCamera.gameObject.SetActive(true);
+        gameObject.SetActive(true);
     }
 
     private void Start()
