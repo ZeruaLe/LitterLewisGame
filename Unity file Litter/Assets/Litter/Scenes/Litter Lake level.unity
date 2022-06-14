@@ -9107,7 +9107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 0}
-  parallaxEffectMultiplier: {x: 1, y: 1}
+  parallaxEffectMultiplier: {x: 0, y: 0.5}
 --- !u!4 &2073052940 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1622809280872245068, guid: 3e89eb10fb5144a4da8c8727a2a4ad9b, type: 3}
