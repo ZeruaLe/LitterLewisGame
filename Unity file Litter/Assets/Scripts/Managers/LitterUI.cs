@@ -2,9 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class LitterUI : MonoBehaviour
 {
+    #region Singleton
+    public static LitterUI instance { get; private set; }
+
+    #endregion
+
+    #region Variables
+
     [Header("Level Text")]
     public Animation levelTextCity;
     public Animation levelTextLake;
@@ -13,11 +21,20 @@ public class LitterUI : MonoBehaviour
     [Header("Loading")]
     public LoadingUI loadingUI;
 
-
-    #region Singleton
-    public static LitterUI instance { get; private set; }
+    [Header("Collectables")]
+    public GameObject collectablesUIGO;
+    public Image collectablesUIImage;
+    public List<Sprite> collectablesID;
 
     #endregion
+
+    #region Events
+
+    public static UnityAction<bool> onCollectUIToggle;
+
+    #endregion
+
+    #region Awake / Destroy
 
     private void Awake()
     {
@@ -37,15 +54,25 @@ public class LitterUI : MonoBehaviour
         }
     }
 
+    #endregion
+
+    #region Enable / Disable
+
     private void OnEnable()
     {
         LitterGameManager.onNewLevel += OnNewLevelCallback;
+        LitterCollectable.OnCollectableObtain += OnCollectableObtain;
     }
 
     private void OnDisable()
     {
         LitterGameManager.onNewLevel -= OnNewLevelCallback;
+        LitterCollectable.OnCollectableObtain -= OnCollectableObtain;
     }
+
+    #endregion
+
+    #region Event Callbacks
 
     private void OnNewLevelCallback(LevelID level)
     {
@@ -62,4 +89,28 @@ public class LitterUI : MonoBehaviour
                 break;
         }
     }
+
+    private void OnCollectableObtain(int id)
+    {
+        if(id >= 0 && id < collectablesID.Count)
+        {
+            collectablesUIImage.sprite = collectablesID[id];
+            collectablesUIGO.SetActive(true);
+
+            onCollectUIToggle?.Invoke(true);
+        }
+    }
+
+    #endregion
+
+    #region Button Callbacks
+
+    public void OnCollectableConfirm()
+    {
+        collectablesUIGO.SetActive(false);
+
+        onCollectUIToggle?.Invoke(false);
+    }
+
+    #endregion
 }

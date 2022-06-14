@@ -49,6 +49,7 @@ public class PlayerController : MonoBehaviour
     private float inputVertical;   
     private bool isClimbing;
     private bool canJump;
+    private bool isControllable = true;
 
     private float horizontalMove = 0f;
     private float verticalMove = 0f;
@@ -78,6 +79,8 @@ public class PlayerController : MonoBehaviour
     {
         instance = this;
 
+        LitterUI.onCollectUIToggle += OnCollectUIToggle;
+
         if (m_Rigidbody != null)
         {
             m_Rigidbody.velocity = Vector3.zero;
@@ -87,11 +90,23 @@ public class PlayerController : MonoBehaviour
         state = State.idle;
     }
 
+    private void OnDisable()
+    {
+        LitterUI.onCollectUIToggle -= OnCollectUIToggle;
+    }
+
+    private void OnCollectUIToggle(bool toggle)
+    {
+        isControllable = !toggle;
+    }
+
     // Runs once every frame
     private void Update()
    {
-       horizontalMove = Input.GetAxis("Horizontal");     // Get the player input for the X axis (left and right) - keyboard keys "A" and "D"
-       verticalMove = Input.GetAxisRaw("Vertical");
+
+        horizontalMove = isControllable ? Input.GetAxis("Horizontal") : 0;     // Get the player input for the X axis (left and right) - keyboard keys "A" and "D"
+        verticalMove = isControllable ? Input.GetAxisRaw("Vertical") : 0;
+
        CheckJump();
        getMovementKey(horizontalMove * Time.fixedDeltaTime);      // Calls getMovementKey() function and passes the input the user presses
        getState();      // Calls getState() function
@@ -145,7 +160,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Can only Jump when the "Spacebar" key is pressed and the player is touching the floor (Layer is Foreground layer)
-        if (Input.GetButtonDown("Jump") && canJump)
+        if (isControllable && Input.GetButtonDown("Jump") && canJump)
         {
             coyoteTimeTime = 0;
             SoundManagerScript.instance.Play("PlayerJump");
