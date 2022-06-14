@@ -27,7 +27,7 @@ public class VerticalObjectMovement : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (gameObject.activeInHierarchy && collision.gameObject.activeInHierarchy)
-            collision.transform.parent = null; // Make the player not a child of this game object.
+            collision.transform.parent = transform.root; // Make the player not a child of this game object.
     }
 
     void Update()
