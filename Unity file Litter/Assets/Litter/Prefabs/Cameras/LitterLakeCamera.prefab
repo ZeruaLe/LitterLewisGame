@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 728924085048172213}
   - component: {fileID: 728924085048172214}
   - component: {fileID: 728924085048172210}
+  - component: {fileID: 3721546414209421297}
   m_Layer: 0
   m_Name: LitterLakeCamera
   m_TagString: MainCamera
@@ -27,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 728924085048172215}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 14.05, y: -0.619, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -115,4 +116,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myCamera: {fileID: 728924085048172212}
   playerCamera: {fileID: 728924085048172214}
-  cameraPan: {fileID: 0}
+  cameraPan: {fileID: 3721546414209421297}
+--- !u!111 &3721546414209421297
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728924085048172215}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: af4b1c814b90a0f4b904b829f33e863a, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
