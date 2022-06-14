@@ -45,6 +45,7 @@ public class LitterGameManager : MonoBehaviour
 
     public static UnityAction<LevelID> onNewLevel;
     public static UnityAction onStartGame;
+    public static UnityAction onShowEndMessage;
 
     #endregion
 
@@ -265,10 +266,24 @@ public class LitterGameManager : MonoBehaviour
         _levelCity.levelCamera.DoCameraPan(() => cityPanComplete = true);
         yield return new WaitUntil(() => cityPanComplete);
 
+        // Fade in to transition to End Message
+        fadeInComplete = false;
+        LitterUI.instance.loadingUI.FadeIn(() => fadeInComplete = true);
+        yield return new WaitUntil(() => fadeInComplete);
+
+        onShowEndMessage?.Invoke();
+
+        // Fade back in
+        fadeOutComplete = false;
+        LitterUI.instance.loadingUI.FadeOut(() => fadeOutComplete = true);
+        yield return new WaitUntil(() => fadeOutComplete);
+    }
+
+    public void EndGame()
+    {
         _isGameReady = false;
         SceneManager.LoadScene(0, LoadSceneMode.Single);
         LoadLevels();
-
     }
 
     #endregion

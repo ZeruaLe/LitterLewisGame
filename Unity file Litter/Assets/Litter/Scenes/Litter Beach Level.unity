@@ -3852,8 +3852,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playOnEnable: 1
-  stopOnDisable: 0
-  playOnlyOnce: 1
+  stopOnDisable: 1
+  playOnlyOnce: 0
   soundToPlay: BeachAmbience
 --- !u!114 &757503078
 MonoBehaviour:
@@ -3868,7 +3868,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playOnEnable: 1
-  stopOnDisable: 1
+  stopOnDisable: 0
   playOnlyOnce: 1
   soundToPlay: BeachTheme
 --- !u!1 &773451251
