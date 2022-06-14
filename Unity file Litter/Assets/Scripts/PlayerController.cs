@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
     private float score = 0f;
     private int currentKeyAmount = 0;
     private float speedModifiers = 0;
+    private bool isMoving;
 
     [Header("Spawning Settings")]
     [SerializeField] private CallbackSpawner _jumpSpawner;
@@ -118,15 +119,28 @@ public class PlayerController : MonoBehaviour
             // Runs if input is "A" meaning left
             if (horizontalMove < 0)
             {
+                SoundManagerScript.instance.Play("PlayerMove");
                 m_Rigidbody.velocity = new Vector2(-newSpeed, m_Rigidbody.velocity.y);      //  Move the player left
                 m_Rigidbody.velocity = Vector3.SmoothDamp(m_Rigidbody.velocity, targetVelocity, ref velocity, m_MovementSmoothing);     //Smoothen the movement after the key is released
                 transform.localScale = new Vector2(-1, 1);       // Rotate the sprite to face left
+                isMoving = true;
             }
             else if (horizontalMove > 0) // Runs if input is "D" meaning right
             {
+                SoundManagerScript.instance.Play("PlayerMove");
                 m_Rigidbody.velocity = new Vector2(newSpeed, m_Rigidbody.velocity.y);     // Move the player right
                 m_Rigidbody.velocity = Vector3.SmoothDamp(m_Rigidbody.velocity, targetVelocity, ref velocity, m_MovementSmoothing);     //Smoothen the movement after the key is released
                 transform.localScale = new Vector2(1, 1);      // Rotate the sprite to face right
+                isMoving=true;
+            }
+        }
+
+        if (horizontalMove == 0 || verticalMove < 0)
+        {
+            if (isMoving)
+            {
+                isMoving = false;
+                SoundManagerScript.instance.Stop("PlayerMove");
             }
         }
 
@@ -134,7 +148,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Jump") && canJump)
         {
             coyoteTimeTime = 0;
-            //SoundManagerScript.PlaySound("jump");       // Play jump sound
+            SoundManagerScript.instance.Play("PlayerJump");
             m_Rigidbody.velocity = new Vector2(m_Rigidbody.velocity.x, jumpForce);      // Moves the player object up at a certain jump force specified by the user
             state = State.jump;     // change the state to "Jump"
 
@@ -198,6 +212,7 @@ public class PlayerController : MonoBehaviour
        // Decreases the player's current health by the damage value, if it is less than or equal to 0, player loses
        if ((currentHealth -= damage) <= 0)
        {
+            SoundManagerScript.instance.Play("PlayerDeath");
             gameObject.SetActive(false);
 
             OnDeath?.Invoke();

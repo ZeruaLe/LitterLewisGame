@@ -2,11 +2,19 @@ using UnityEngine.Audio;
 using UnityEngine;
 
 
+public enum SoundType
+{
+    Default,
+    Player,
+    Music
+}
+
 [System.Serializable] //On unity under audio manager a list of audio should show up
 
 public class Sound {
 
     public string name; // The name for each of audio used 
+    public SoundType type;
 
     public AudioClip clip; // Referencing to our audio clip
 
@@ -17,6 +25,7 @@ public class Sound {
     public float pitch; //referencing to our pitch 
 
     public bool loop; //To repeat the audio you play
+    public bool overrideClip;
 
     [HideInInspector] //Eventhough the variable is public this method will not show
     public AudioSource source; 
