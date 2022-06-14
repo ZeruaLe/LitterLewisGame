@@ -8235,6 +8235,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1872626772}
   - component: {fileID: 1872626773}
+  - component: {fileID: 1872626775}
+  - component: {fileID: 1872626774}
   m_Layer: 0
   m_Name: LitterLake
   m_TagString: Untagged
@@ -8293,6 +8295,38 @@ MonoBehaviour:
   levelCamera: {fileID: 855304957}
   startingCheckpoint: {fileID: 0}
   levelPlayer: {fileID: 429451650}
+--- !u!114 &1872626774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872626771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c3a03440d40f8244bfa2c833dd525fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playOnEnable: 1
+  stopOnDisable: 1
+  playOnlyOnce: 1
+  soundToPlay: LakeAmbience
+--- !u!114 &1872626775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872626771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c3a03440d40f8244bfa2c833dd525fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playOnEnable: 1
+  stopOnDisable: 0
+  playOnlyOnce: 1
+  soundToPlay: LakeTheme
 --- !u!1001 &1907972498
 PrefabInstance:
   m_ObjectHideFlags: 0

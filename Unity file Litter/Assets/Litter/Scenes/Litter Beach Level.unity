@@ -3776,6 +3776,8 @@ GameObject:
   m_Component:
   - component: {fileID: 757503075}
   - component: {fileID: 757503076}
+  - component: {fileID: 757503078}
+  - component: {fileID: 757503077}
   m_Layer: 0
   m_Name: LitterBeach
   m_TagString: Untagged
@@ -3837,6 +3839,38 @@ MonoBehaviour:
   levelCamera: {fileID: 1038347304}
   startingCheckpoint: {fileID: 1834167962}
   levelPlayer: {fileID: 1712195022}
+--- !u!114 &757503077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757503074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c3a03440d40f8244bfa2c833dd525fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playOnEnable: 1
+  stopOnDisable: 0
+  playOnlyOnce: 1
+  soundToPlay: BeachAmbience
+--- !u!114 &757503078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757503074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c3a03440d40f8244bfa2c833dd525fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playOnEnable: 1
+  stopOnDisable: 1
+  playOnlyOnce: 1
+  soundToPlay: BeachTheme
 --- !u!1 &773451251
 GameObject:
   m_ObjectHideFlags: 0
