@@ -63,7 +63,6 @@ MonoBehaviour:
   citySceneIndex: 1
   lakeSceneIndex: 2
   beachSceneIndex: 3
-  menuGO: {fileID: 0}
   isDebug: 0
 --- !u!1001 &4807029137946457837
 PrefabInstance:
@@ -72,6 +71,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1315695050940188412}
     m_Modifications:
+    - target: {fileID: 3703437060217422575, guid: c15ab4aaff9ed08418b511c5e9deace8, type: 3}
+      propertyPath: sounds.Array.data[13].loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3703437060217422575, guid: c15ab4aaff9ed08418b511c5e9deace8, type: 3}
+      propertyPath: sounds.Array.data[13].name
+      value: Collectible
+      objectReference: {fileID: 0}
+    - target: {fileID: 3703437060217422575, guid: c15ab4aaff9ed08418b511c5e9deace8, type: 3}
+      propertyPath: sounds.Array.data[13].overrideClip
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7588751595945709319, guid: c15ab4aaff9ed08418b511c5e9deace8, type: 3}
       propertyPath: m_RootOrder
       value: 0

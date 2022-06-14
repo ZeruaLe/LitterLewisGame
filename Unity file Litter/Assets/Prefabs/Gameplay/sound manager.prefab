@@ -106,7 +106,7 @@ MonoBehaviour:
   - name: CityAmbience
     type: 0
     clip: {fileID: 8300000, guid: cb3c4c3481d899d4abdd20f8d23062e2, type: 3}
-    volume: 0.1
+    volume: 0.15
     pitch: 1
     loop: 1
     overrideClip: 0
@@ -114,7 +114,7 @@ MonoBehaviour:
   - name: LakeAmbience
     type: 0
     clip: {fileID: 8300000, guid: 1dcc406707e83ae408b57f8ae78d1202, type: 3}
-    volume: 0.1
+    volume: 0.15
     pitch: 1
     loop: 1
     overrideClip: 0
@@ -122,21 +122,21 @@ MonoBehaviour:
   - name: BeachAmbience
     type: 0
     clip: {fileID: 8300000, guid: 299b299d6def42a4198573b5e142f8f7, type: 3}
-    volume: 0.1
+    volume: 0.15
     pitch: 1
     loop: 1
     overrideClip: 0
     source: {fileID: 0}
   - name: EndTheme
-    type: 0
+    type: 2
     clip: {fileID: 8300000, guid: ac6151d7e0603584aaabd829502c4f00, type: 3}
-    volume: 0.1
+    volume: 0.15
     pitch: 1
     loop: 1
     overrideClip: 0
     source: {fileID: 0}
   - name: LakeTheme
-    type: 0
+    type: 2
     clip: {fileID: 8300000, guid: f7a1fc8786da5b642ae58e9baf1c94e3, type: 3}
     volume: 0.2
     pitch: 1
@@ -144,9 +144,17 @@ MonoBehaviour:
     overrideClip: 0
     source: {fileID: 0}
   - name: BeachTheme
-    type: 0
+    type: 2
     clip: {fileID: 8300000, guid: 68ef55232046ada49b46064be31beb5e, type: 3}
     volume: 0.2
+    pitch: 1
+    loop: 1
+    overrideClip: 0
+    source: {fileID: 0}
+  - name: Collectibles
+    type: 2
+    clip: {fileID: 8300000, guid: 219f94eb171e5094e82784458a56368f, type: 3}
+    volume: 1
     pitch: 1
     loop: 1
     overrideClip: 0
