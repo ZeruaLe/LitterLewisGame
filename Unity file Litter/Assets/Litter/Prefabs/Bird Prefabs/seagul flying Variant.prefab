@@ -79,6 +79,59 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8015105081669133587, guid: 8a177ea054a09a443861295861de646a, type: 3}
+      propertyPath: triggerEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8015105081669133587, guid: 8a177ea054a09a443861295861de646a, type: 3}
+      propertyPath: triggerEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8015105081669133587, guid: 8a177ea054a09a443861295861de646a, type: 3}
+      propertyPath: triggerEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 4760972055581777989}
+    - target: {fileID: 8015105081669133587, guid: 8a177ea054a09a443861295861de646a, type: 3}
+      propertyPath: triggerEvent.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8015105081669133587, guid: 8a177ea054a09a443861295861de646a, type: 3}
+      propertyPath: triggerEvent.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 8015105081669133587, guid: 8a177ea054a09a443861295861de646a, type: 3}
+      propertyPath: triggerEvent.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: LitterSoundPlayer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8015105081669133587, guid: 8a177ea054a09a443861295861de646a, type: 3}
+      propertyPath: triggerEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8015105081669133611, guid: 8a177ea054a09a443861295861de646a, type: 3}
+      propertyPath: m_Name
+      value: seagul flying Variant
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 743793955408650643, guid: 8a177ea054a09a443861295861de646a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8a177ea054a09a443861295861de646a, type: 3}
+--- !u!1 &9073907057795901577 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8015105081669133611, guid: 8a177ea054a09a443861295861de646a, type: 3}
+  m_PrefabInstance: {fileID: 1357731932057931170}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4760972055581777989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9073907057795901577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c3a03440d40f8244bfa2c833dd525fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playOnEnable: 0
+  stopOnDisable: 0
+  playOnlyOnce: 0
+  soundToPlay: BirdDeath

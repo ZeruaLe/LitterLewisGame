@@ -2863,6 +2863,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playOnEnable: 1
   stopOnDisable: 0
+  playOnlyOnce: 0
   soundToPlay: MenuTheme
 --- !u!1 &1133965790
 GameObject:
@@ -3667,7 +3668,15 @@ PrefabInstance:
     - target: {fileID: 8201265934091351042, guid: e9f9773e3cffa8742a2814ed0faa949d, type: 3}
       propertyPath: sounds.Array.data[7].clip
       value: 
-      objectReference: {fileID: 8300000, guid: d6bd325dfabd77947a973fda36b76306, type: 3}
+      objectReference: {fileID: 8300000, guid: cb3c4c3481d899d4abdd20f8d23062e2, type: 3}
+    - target: {fileID: 8201265934091351042, guid: e9f9773e3cffa8742a2814ed0faa949d, type: 3}
+      propertyPath: sounds.Array.data[5].volume
+      value: 0.155
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201265934091351042, guid: e9f9773e3cffa8742a2814ed0faa949d, type: 3}
+      propertyPath: sounds.Array.data[6].volume
+      value: 0.155
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9f9773e3cffa8742a2814ed0faa949d, type: 3}
 --- !u!1 &1887884896
