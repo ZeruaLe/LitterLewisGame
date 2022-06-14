@@ -51,6 +51,11 @@ public class LitterGameManager : MonoBehaviour
 
     #region Awake / Enable
 
+    private void Start()
+    {
+        SoundManagerScript.instance.Play("MenuTheme");
+    }
+
     private void Awake()
     {
         // Init our instance
