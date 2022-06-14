@@ -6310,7 +6310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playOnEnable: 1
   stopOnDisable: 1
-  playOnlyOnce: 1
+  playOnlyOnce: 0
   soundToPlay: CityAmbience
 --- !u!4 &294576908 stripped
 Transform:

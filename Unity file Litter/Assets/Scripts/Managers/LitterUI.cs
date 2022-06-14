@@ -26,6 +26,9 @@ public class LitterUI : MonoBehaviour
     public Image collectablesUIImage;
     public List<Sprite> collectablesID;
 
+    [Header("End Message")]
+    public GameObject endMessageGO;
+
     #endregion
 
     #region Events
@@ -61,12 +64,14 @@ public class LitterUI : MonoBehaviour
     private void OnEnable()
     {
         LitterGameManager.onNewLevel += OnNewLevelCallback;
+        LitterGameManager.onShowEndMessage += OnShowEndMessage;
         LitterCollectable.OnCollectableObtain += OnCollectableObtain;
     }
 
     private void OnDisable()
     {
         LitterGameManager.onNewLevel -= OnNewLevelCallback;
+        LitterGameManager.onShowEndMessage -= OnShowEndMessage;
         LitterCollectable.OnCollectableObtain -= OnCollectableObtain;
     }
 
@@ -101,6 +106,11 @@ public class LitterUI : MonoBehaviour
         }
     }
 
+    private void OnShowEndMessage()
+    {
+        endMessageGO.SetActive(true);
+    }
+
     #endregion
 
     #region Button Callbacks
@@ -110,6 +120,12 @@ public class LitterUI : MonoBehaviour
         collectablesUIGO.SetActive(false);
 
         onCollectUIToggle?.Invoke(false);
+    }
+
+    public void OnEndGame()
+    {
+        endMessageGO.SetActive(false);
+        LitterGameManager.instance.EndGame();
     }
 
     #endregion

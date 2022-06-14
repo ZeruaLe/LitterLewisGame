@@ -8309,7 +8309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playOnEnable: 1
   stopOnDisable: 1
-  playOnlyOnce: 1
+  playOnlyOnce: 0
   soundToPlay: LakeAmbience
 --- !u!114 &1872626775
 MonoBehaviour:
