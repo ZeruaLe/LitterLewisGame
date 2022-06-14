@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public enum LevelID
@@ -37,6 +38,12 @@ public class LitterGameManager : MonoBehaviour
     private static LitterLevel _curLevel;
 
     private int _curLevelNumber;
+
+    #endregion
+
+    #region Events
+
+    public static UnityAction<LevelID> onNewLevel;
 
     #endregion
 
@@ -145,7 +152,9 @@ public class LitterGameManager : MonoBehaviour
             _curLevel.ToggleLevel(false);
 
         _curLevel = levelToSwitchTo;
-        levelToSwitchTo.ToggleLevel(true);       
+        levelToSwitchTo.ToggleLevel(true);
+
+        onNewLevel?.Invoke(levelToSwitchTo.levelId);
     }
 
     public void HandleGameFlow()
